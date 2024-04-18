@@ -1,0 +1,84 @@
+<%- include("./partials/header.ejs") %>
+
+<body class="sb-nav-fixed">
+        <%- include("./partials/nav.ejs") %>
+        <div id="layoutSidenav">
+            <%- include('./partials/sidenav.ejs') %>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Certificates</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Certificate Lists</li>
+                        </ol>
+                        <%- include('./partials/cards.ejs') %>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Certificates DataTable
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Middle Name</th>
+                                            <th>Category</th>
+                                            <th>Date</th>
+                                            <th>Registration Number</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Middle Name</th>
+                                            <th>Category</th>
+                                            <th>Date</th>
+                                            <th>Registration Number</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        
+                                        <% if (certificate.length > 0) { %>
+                                            <% certificate.forEach(certificate => { %>
+                                                <!-- <a href="/certificates/<%= certificate._id %>"> -->
+                                                <tr>
+                                                    <td><%= certificate.firstName %></td>
+                                                    <td><%= certificate.lastName %></td>
+                                                    <td><%= certificate.middleName %></td>
+                                                    <td><%= certificate.category %></td>
+                                                    <td><%= certificate.date %></td>
+                                                    <td><%= certificate.registrationNo %></td>
+                                                    <td><%= certificate.status %></td>
+                                                    <td class="dropdown">
+                                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            Action
+                                                        </a>
+
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="/certificate-pending/<%= certificate._id %>">Pending</a></li>
+                                                            <li><a class="dropdown-item" href="/certificate-collected/<%= certificate._id %>">Collected</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <!-- </a> -->
+                                            <% }); %>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <%- include('./partials/footer.ejs') %>
+            </div>
+        </div>
+        <%- include('./partials/scripts.ejs') %>
+    </body>
+</html>

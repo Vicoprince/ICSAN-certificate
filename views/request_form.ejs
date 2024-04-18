@@ -1,0 +1,43 @@
+<%- include('./partials/header.ejs') %>
+<body style="background: purple">
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title text-center mb-4">Membership Registration Form</h1>
+                        <form action="/submitting_request" method="POST">
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="membershipNo" class="form-label">Membership No</label>
+                                <input type="text" class="form-control" id="membershipNo" name="membershipNo" placeholder="Enter your membership number" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="yearGraduated" class="form-label">Year Graduated</label>
+                                <input type="text" class="form-control" id="yearGraduated" name="yearGraduated" placeholder="Enter the year graduated" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Category</label>
+                                <select class="form-select" id="category" name="category" required>
+                                    <option value="graduate">Graduate</option>
+                                    <option value="associate">Associate</option>
+                                    <option value="fellow">Fellow</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/scripts.js"></script> 
+</body>
+</html>

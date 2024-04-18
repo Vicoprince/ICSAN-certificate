@@ -1,0 +1,67 @@
+<%- include("./partials/header.ejs") %>
+
+<body class="sb-nav-fixed">
+        <%- include("./partials/nav.ejs") %>
+        <div id="layoutSidenav">
+            <%- include('./partials/sidenav.ejs') %>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Add New</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Add New Certificate</li>
+                        </ol>
+                        <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center mb-4">Certification Form</h5>
+                                    <form action="/submiting-new-certificate" method="post">
+                                        <div class="row mb-3">
+                                            <div class="col">
+                                                <label for="firstName" class="form-label">First Name</label>
+                                                <input type="text" class="form-control" name="firstName" placeholder="Enter your first name">
+                                            </div>
+                                            <div class="col">
+                                                <label for="lastName" class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" name="lastName" placeholder="Enter your last name">
+                                            </div>
+                                            <div class="col">
+                                                <label for="middleName" class="form-label">Middle Name</label>
+                                                <input type="text" class="form-control" name="middleName" placeholder="Enter your middle name">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col">
+                                                <label for="category" class="form-label">Category</label>
+                                                <select class="form-select" name="category">
+                                                    <option value="Graduate">Graduate</option>
+                                                    <option value="Fellow">Fellow</option>
+                                                    <option value="Associate">Associate</option>
+                                                </select>
+                                            </div>
+                                            <div class="col">
+                                                <label for="date" class="form-label">Date</label>
+                                                <input type="date" class="form-control" name="date">
+                                            </div>
+                                            <div class="col">
+                                                <label for="registrationNumber" class="form-label">Registration Number</label>
+                                                <input type="text" class="form-control" name="registrationNo" placeholder="Enter registration number">
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <%- include('./partials/footer.ejs') %>
+            </div>
+        </div>
+        <%- include('./partials/scripts.ejs') %>
+    </body>
+</html>
