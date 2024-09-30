@@ -95,28 +95,28 @@ app.post("/login", async (req, res) => {
   }
 });
 
-// app.get("/signup", (req, res) => {
-//   const userData = new User({
-//     email: "goerge@gmail.com",
-//     password: "test123",
-//   });
+app.get("/signup", (req, res) => {
+  const userData = new User({
+    email: "goerge@gmail.com",
+    password: "test123",
+  });
 
-//   userData
-//     .save()
-//     .then((result) => {
-//       // res.send(result);
-//       // res.send("User sign up");
-//       const token = createToken(userData._id);
-//       res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-//       res.status(201).json({ result: userData._id });
-//       res.redirect("/login");
-//     })
-//     .catch((err) => {
-//       // console.log(err);
-//       const errors = handleErrors(err);
-//       res.status(400).json({ errors });
-//     });
-// });
+  userData
+    .save()
+    .then((result) => {
+      // res.send(result);
+      // res.send("User sign up");
+      const token = createToken(userData._id);
+      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+      res.status(201).json({ result: userData._id });
+      res.redirect("/login");
+    })
+    .catch((err) => {
+      // console.log(err);
+      const errors = handleErrors(err);
+      res.status(400).json({ errors });
+    });
+});
 
 app.get("/total", async (req, res) => {
   try {
