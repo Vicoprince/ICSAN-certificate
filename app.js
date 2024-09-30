@@ -97,8 +97,8 @@ app.post("/login", async (req, res) => {
 
 app.get("/signup", (req, res) => {
   const userData = new User({
-    email: "goerge@gmail.com",
-    password: "test123",
+    email: "afolabibukun@gmail.com",
+    password: "victory25",
   });
 
   userData
